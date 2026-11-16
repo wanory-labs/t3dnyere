@@ -196,8 +196,10 @@ fn preview_is_deterministic_bounded_and_visible() {
     assert_eq!(bytes.len(), header.len() + 32 * 32 * 3);
     assert!(
         bytes[header.len()..]
-            .chunks_exact(3)
-            .any(|p| p != [19, 25, 34])
+            .as_chunks::<3>()
+            .0
+            .iter()
+            .any(|p| *p != [19, 25, 34])
     );
     assert_eq!(
         bytes,
