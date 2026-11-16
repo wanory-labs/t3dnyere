@@ -10,6 +10,8 @@ Model disimpan sebagai program CSG, bukan daftar polygon. Sumber JSON dapat died
 
 ## Coba
 
+Pakai Rust 1.97.1 dengan `rustfmt` dan `clippy`. Rustup mengikuti [rust-toolchain.toml](<rust-toolchain.toml>) saat menjalankan perintah di repo ini; CI memakai versi yang sama. Saat upgrade, ubah pin lokal dan CI bersama-sama, lalu jalankan tes dan lint.
+
 ```sh
 cargo test --locked
 cargo build --release --locked
